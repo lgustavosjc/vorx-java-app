@@ -1,6 +1,5 @@
 pipeline {
     agent any
-	
 	environment {
 		PASS = credentials('registry-pass')
 	}
@@ -40,6 +39,5 @@ pipeline {
             sh './jenkins/build/mvn.sh mvn clean'
 	    deleteDir()
         }
-    }
-	
+    } 	
 }
