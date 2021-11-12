@@ -30,6 +30,12 @@ PASS = credentials('registry-pass')
                 sh './jenkins/deploy/deploy.sh'
             }
         }
+        stage('Cleanup') {
+		steps {
+			sh './jenkins/build/mvn.sh mvn clean'
+			deleteDir()
+		}
+	}
     }
 }
 
